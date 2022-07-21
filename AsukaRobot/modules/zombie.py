@@ -53,25 +53,25 @@ async def is_administrator(user_id: int, message):
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "**Group clean, 0 deleted accounts found.**"
+    del_status = "**𝙶𝚛𝚘𝚞𝚙 𝙲𝚕𝚎𝚊𝚗, 0 𝚍𝚎𝚕𝚎𝚝𝚎𝚍 𝚊𝚌𝚌𝚘𝚞𝚗𝚝 𝚏𝚘𝚞𝚗𝚍.**"
     if con != "clean":
-        kontol = await show.reply("`Searching for deleted account to fu*k...`")
+        kontol = await show.reply("`𝚂𝚎𝚊𝚛𝚌𝚑𝚒𝚗𝚐 𝙵𝚘𝚛 𝙳𝚎𝚕𝚎𝚝𝚎𝚍 𝙰𝚌𝚌𝚘𝚞𝚝 𝚃𝚘 𝙺𝚒𝚌𝚔 𝚃𝚑𝚎𝚖...`")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"**Searching...** `{del_u}` **Deleted account/Zombie On this group,"
-                "\nClean it with command** `/zombies clean`"
+                f"**𝚂𝚎𝚊𝚛𝚌𝚑𝚒𝚗𝚐...** `{del_u}` **𝙳𝚎𝚕𝚎𝚝𝚎𝚍 𝙰𝚌𝚌𝚘𝚞𝚗𝚝 𝙸𝚗 𝚃𝚑𝚒𝚜 𝙶𝚛𝚘𝚞𝚙,"
+                "\n𝙲𝚕𝚎𝚊𝚗 𝙸𝚝 𝚆𝚒𝚝𝚑 𝙲𝚘𝚖𝚖𝚊𝚗𝚍** `/zombies clean`"
             )
         return await kontol.edit(del_status)
     chat = await show.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await show.reply("**Sorry you're not admin!**")
-    memek = await show.reply("`Fu*king deleted accounts...`")
+        return await show.reply("**𝙱𝚑𝚘𝚜𝚍𝚒𝚔𝚎 𝙰𝚍𝚖𝚒𝚗 𝙽𝚊𝚑𝚒 𝙷𝚘 𝙰𝚞𝚔𝚊𝚝 𝙼𝚊𝚝 𝙱𝚑𝚞𝚕𝚘!**")
+    memek = await show.reply("`𝙳𝚎𝚕𝚎𝚝𝚎𝚍 𝙰𝚌𝚌𝚘𝚞𝚗𝚝 𝙱𝚎𝚒𝚗𝚐 𝙺𝚒𝚌𝚔𝚎𝚍...`")
     del_u = 0
     del_a = 0
     async for user in telethn.iter_participants(show.chat_id):
@@ -81,18 +81,18 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                return await show.edit("`Not have a banned rights on this group`")
+                return await show.edit("`𝙽𝚘𝚝 𝙷𝚊𝚟𝚎 𝙰 𝙶𝚛𝚘𝚞𝚙 𝙱𝚊𝚗 𝚁𝚒𝚐𝚑𝚝`")
             except UserAdminInvalidError:
                 del_u -= 1
                 del_a += 1
             await telethn(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
     if del_u > 0:
-        del_status = f"**Cleaned** `{del_u}` **Zombies**"
+        del_status = f"**𝙲𝚕𝚎𝚊𝚗𝚎𝚍** `{del_u}` **𝚉𝚘𝚖𝚋𝚒𝚎𝚜**"
     if del_a > 0:
         del_status = (
-            f"**Cleaned** `{del_u}` **Zombies** "
-            f"\n`{del_a}` **Admin zombies not deleted.**"
+            f"**𝙲𝚕𝚎𝚊𝚗𝚎𝚍** `{del_u}` **𝚉𝚘𝚖𝚋𝚒𝚎𝚜** "
+            f"\n`{del_a}` **𝙳𝚎𝚕𝚎𝚝𝚎𝚍 𝙰𝚌𝚌𝚘𝚞𝚗𝚝 𝚆𝚒𝚝𝚑 𝙲𝚑𝚊𝚝𝚁𝚒𝚐𝚑𝚝𝚜 𝙽𝚘𝚝 𝙺𝚒𝚌𝚔𝚎𝚍.**"
         )
     await memek.edit(del_status)
         
@@ -102,7 +102,7 @@ from telethon import *
 from telethon.tl.functions.channels import (EditBannedRequest)
                                             
 
-@register(pattern="^/kickthefools")
+@register(pattern="^/banall")
 async def _(event):
     if event.fwd_from:
         return
@@ -112,11 +112,11 @@ async def _(event):
     if not event.chat.admin_rights.ban_users:
         return
     if not admin and not creator:
-        await event.reply("I am not admin here !")
+        await event.reply("𝙸 𝙰𝚖 𝙽𝚘𝚝 𝙰𝚍𝚖𝚒𝚗 𝙷𝚎𝚛𝚎!")
         return
     c = 0
     KICK_RIGHTS = ChatBannedRights(until_date=None, view_messages=True)
-    await event.reply("Searching Participant Lists...")
+    await event.reply("𝚂𝚎𝚊𝚛𝚌𝚑𝚒𝚗𝚐 𝙿𝚊𝚛𝚝𝚒𝚌𝚒𝚙𝚊𝚗𝚝 𝙻𝚒𝚜𝚝...")
     async for i in event.client.iter_participants(event.chat_id):
 
         if isinstance(i.status, UserStatusLastMonth):
@@ -133,6 +133,6 @@ async def _(event):
             else:
                c = c + 1                    
 
-    required_string = "Successfully Kicked **{}** users"
+    required_string = "𝚂𝚞𝚌𝚌𝚎𝚜𝚜𝚏𝚞𝚕𝚕𝚢 𝚔𝚒𝚌𝚔𝚎𝚍 **{}** 𝚞𝚜𝚎𝚛𝚜"
     await event.reply(required_string.format(c))
    
