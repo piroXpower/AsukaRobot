@@ -896,17 +896,17 @@ def pinned(update: Update, context: CallbackContext) -> str:
             message_link = f"https://t.me/c/{link_chat_id}/{pinned_id}"
 
         msg.reply_text(
-            f'🔽 Pinned on {html.escape(chat.title)}.',
+            f'🔽 𝙿𝚒𝚗𝚗𝚎𝚍 𝙾𝚗 {html.escape(chat.title)}.',
             reply_to_message_id=msg_id,
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="👉 Go to message", url=f"https://t.me/{link_chat_id}/{pinned_id}")]]
+                [[InlineKeyboardButton(text="👉 𝙶𝚘 𝚃𝚘 𝚃𝚑𝚎 𝙼𝚎𝚜𝚜𝚊𝚐𝚎", url=f"https://t.me/{link_chat_id}/{pinned_id}")]]
             ),
         )
 
     else:
-        msg.reply_text(f'There is no pinned message in {html.escape(chat.title)}!')
+        msg.reply_text(f'𝚃𝚑𝚎𝚛𝚎 𝙸𝚜 𝙽𝚘 𝙼𝚎𝚜𝚜𝚊𝚐𝚎 𝙿𝚒𝚗𝚗𝚎𝚍 {html.escape(chat.title)}!')
 
 
 @bot_admin
@@ -1045,19 +1045,16 @@ def adminlist(update, context):
         return
 
 __help__ = """
-  ➢ /admins: list of admins in the chat
-  ➢ /promote (user) (?admin's title): Promotes the user to admin.
-  ➢ /demote (user): Demotes the user from admin.
-  ➢ /lowpromote: Promote a member with low rights
-  ➢ /midpromote: Promote a member with mid rights
-  ➢ /fullpromote: Promote a member with max rights
-  ➢ /invitelink: gets invitelink
-  ➢ /title <title here>: sets a custom title for an admin that the bot promoted
-  ➢ /admincache: force refresh the admins list
-  ➢ /setgtitle <text>: set group title
-  ➢ /setgpic: reply to an image to set as group photo
-  ➢ /setdesc: Set group description
-  ➢ /setsticker: Set group sticker
+  ➢ /admins: 𝙻𝚒𝚜𝚝 𝙾𝚏 𝙰𝚍𝚖𝚒𝚗 𝙸𝚗 𝚃𝚑𝚒𝚜 𝙲𝚑𝚊𝚝
+  ➢ /promote (user) (?admin's title): 𝙿𝚛𝚘𝚖𝚘𝚝𝚎𝚜 𝚄𝚜𝚎𝚛 𝚃𝚘 𝙰𝚍𝚖𝚒𝚗.
+  ➢ /demote (user): 𝙳𝚎𝚖𝚘𝚝𝚎 𝙰𝚗 𝙰𝚍𝚖𝚒𝚗 𝙿𝚛𝚘𝚖𝚘𝚝𝚎𝚍 𝚋𝚢 𝙱𝚘𝚝
+  ➢ /invitelink: 𝙶𝚎𝚝 𝙸𝚗𝚟𝚒𝚝𝚎
+  ➢ /title <title here>: 𝚂𝚎𝚝𝚜 𝙰 𝙲𝚘𝚜𝚝𝚞𝚗 𝚃𝚒𝚝𝚕𝚎 𝚏𝚘𝚛 𝙰𝚗 𝙰𝚍𝚖𝚒𝚗
+  ➢ /admincache: 𝚁𝚎𝚏𝚛𝚎𝚜𝚑 𝙰𝚍𝚖𝚒𝚗 𝙻𝚒𝚜𝚝
+  ➢ /setgtitle <text>: 𝚂𝚎𝚝 𝙶𝚛𝚘𝚞𝚙 𝚃𝚒𝚝𝚕𝚎
+  ➢ /setgpic: 𝚁𝚎𝚙𝚕𝚢 𝚃𝚘 𝙸𝚖𝚊𝚐𝚎 𝚝𝚘 𝚜𝚎𝚝 𝙶𝚛𝚘𝚞𝚙 𝙿𝚒𝚌
+  ➢ /setdesc: 𝚂𝚎𝚝 𝙶𝚛𝚘𝚞𝚙 𝙳𝚒𝚜𝚌𝚛𝚒𝚙𝚝𝚒𝚘𝚗
+  ➢ /setsticker: 𝚂𝚎𝚝 𝙶𝚛𝚘𝚞𝚙 𝚂𝚝𝚒𝚌𝚔𝚎𝚛
 """
 
 SET_DESC_HANDLER = CommandHandler("setdesc", set_desc, filters=Filters.chat_type.groups, run_async=True)
@@ -1075,9 +1072,6 @@ PINNED_HANDLER = CommandHandler("pinned", pinned, filters=Filters.chat_type.grou
 INVITE_HANDLER = DisableAbleCommandHandler("invitelink", invite, run_async=True)
 
 PROMOTE_HANDLER = DisableAbleCommandHandler("promote", promote, run_async=True)
-FULLPROMOTE_HANDLER = DisableAbleCommandHandler("fullpromote", fullpromote, run_async=True)
-LOW_PROMOTE_HANDLER = DisableAbleCommandHandler("lowpromote", lowpromote, run_async=True)
-MID_PROMOTE_HANDLER = DisableAbleCommandHandler("midpromote", midpromote, run_async=True)
 DEMOTE_HANDLER = DisableAbleCommandHandler("demote", demote, run_async=True)
 
 SET_TITLE_HANDLER = CommandHandler("title", set_title, run_async=True)
@@ -1094,9 +1088,6 @@ dispatcher.add_handler(UNPIN_HANDLER)
 dispatcher.add_handler(PINNED_HANDLER)
 dispatcher.add_handler(INVITE_HANDLER)
 dispatcher.add_handler(PROMOTE_HANDLER)
-dispatcher.add_handler(FULLPROMOTE_HANDLER)
-dispatcher.add_handler(LOW_PROMOTE_HANDLER)
-dispatcher.add_handler(MID_PROMOTE_HANDLER)
 dispatcher.add_handler(DEMOTE_HANDLER)
 dispatcher.add_handler(SET_TITLE_HANDLER)
 dispatcher.add_handler(ADMIN_REFRESH_HANDLER)
