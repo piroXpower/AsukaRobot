@@ -60,41 +60,33 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 PM_START_TEXT = """
-*Hey B!tch {},*
-*Myself 𝗔𝘀𝘂𝗸𝗮 𝗟𝗮𝗻𝗴𝗹𝗲𝘆 𝗦𝗼𝗿𝘆𝘂, Pilot On Evangelion Unit-02 As Well As A Powerful Group Management Bot.*
-
-❍ *EVA Unit - 02*
-❍ *Uptime* - {}
-❍ *Python Version* - {}
-
-*Hit The The Help Button To Get List Of My Commands.××*
-
-*• @AsukaRobot Powered By* [𝗞𝗮𝗶𝘇𝘂𝗿𝘆𝘂](https://t.me/TheKaizuryu)
+*𝙷𝙴𝙻𝙻𝙾 {},*
+*𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 {bn}, 𝙰 𝙿𝙾𝚆𝙴𝚁𝙵𝚄𝙻 𝚂𝙼𝙰𝚁𝚃 𝙶𝚁𝙾𝚄𝙿 𝚁𝙾𝙱𝙾𝚃\n𝚆𝙸𝚃𝙷 𝙼𝙰𝙽𝚈 𝙰𝙼𝙰𝚉𝙸𝙽𝙶 𝙵𝙴𝙰𝚃𝚄𝚁𝙴𝚂. 𝙸 𝙲𝙰𝙽 𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾 𝙼𝙰𝙽𝙰𝙶𝙴 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿𝚂,\n𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈.*
 """
 
 buttons = [
     [
                         InlineKeyboardButton(
-                             text="➕️ Add Asuka To Your Chat ➕️",
-                             url="https://t.me/AsukaRobot?startgroup=true"),
+                             text="➕️ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ➕️",
+                             url="https://t.me/innexiabot?startgroup=true"),
                     ],
                    [
                        InlineKeyboardButton(
-                             text="Kaizuryu",
-                             url="https://t.me/TheKaizuryu"),
+                             text="ʜᴇʟᴘ",
+                             callback_data="help_back"),
                        InlineKeyboardButton(
-                             text="About Asuka",
+                             text="ᴀʙᴏᴜᴛ ᴍᴇ",
                              callback_data="asuka_"),
                    ],
                   [
                         InlineKeyboardButton(
-                             text="Help & Cmds ❔",
-                             callback_data="help_back"),
+                             text="sᴜᴘᴘᴏʀᴛɪᴠᴇ ɴᴇᴛᴡᴏʀᴋ",
+                             url="https://t.me/DEADLY_SPONSER"),
                     ],
     ]
 
 ABOUT1 = """
-*‣ Let's Make Your Group Well Managed Now*\n\n‣ *Admin Tools*:-\nBasic Admin tools help you to protect and powerup your group. You can ban members, Kick members, Promote someone as admin through commands of bot.\n\n‣ *Greetings*:-\nLets set a welcome message to welcome new users coming to your group by sending /setwelcome [message] to set a welcome message.\n\n‣ *Anti-flood*:-\nUsers/Spammers flooding non-stop? send /setflood [number] And /setfloodmode [mute/ban/tmute] To Stop flooding From Spammers.\n\n‣ *Rules*:-\nDon't want to explain rules to each newbie? Setup rules by sending /setrules [message] to set a Rules.\n\n‣ *Reports*:-\nEnable reporting so that your users can report troublemakers to admins send /reports [on\off] to enable/disable reports.
+𝙷𝚎𝚢 𝚃𝚑𝚒𝚜 𝙸𝚜 innexia 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 𝙳𝚎𝚊𝚍𝚕𝚢\n𝙼𝚊𝚍𝚎 𝚆𝚒𝚝𝚑 𝙻𝚘𝚟𝚎 𝙱𝚢 𝙱𝚕𝚊𝚣𝚎 𝙵𝚘𝚛 𝙼𝚊𝚗𝚊𝚐𝚒𝚗𝚐 𝙶𝚛𝚘𝚞𝚙𝚜\n\n══════════════════\n\n.
 """
 
 ABOUT2 = """
@@ -109,51 +101,16 @@ REPO_TXT = """
 • Report Any Kind Of Bugs At [Support](t.me/AsukaSupport)
 """
 
-ABOUT3 = """Hello [{}], My name is *Asuka Langley Soryu*. A Powerful Telegram Group Management Bot built to help you manage Group easily.
-            \n ‣ I can Restrict Users.
-            \n ‣ I can Greet Users with customizable welcome message and even set a group rules
-            \n ‣ I have an advanced Anti-Flood System which will help you to safe group from Spammmer.
-            \n ‣ I can Warn Users until they reach max Warns, with each predefined actions such as Ban, Mute and Kick etc.
-            \n ‣ I have Note Keeping System, Blacklists, And even Predetermined replies on certain keywords.
-            \n ‣ I check Admins Permissions before perform any Command and more Stuffs.
-            \n ‣ I have an advanced Artificial Chatbot System, so can talk with users like humans.
-            \n\n*If you have any Question, You can join Support Chat. My Developer Team will Answer. Check Support Button Below*"""
-
-HELP_STRINGS = """
-Hey [{}] *Asuka* here!
-I Help Admins To Manage Their Groups!
-Main commands available :
- ‣ /help: PM's you this message.
- ‣ /privacy: to view the privacy policy, and interact with your data.
- ‣ /help <module name>: PM's you info about that module.
- ‣ /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
-For all command use / or !
+ABOUT3 = """
+**★ 𝙼𝚈 𝙽𝙰𝙼𝙴:** [𝙸𝙽𝙽𝙴𝚇𝙸𝙰](t.me/innexiaBot)\n**★ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁:** [𝙱𝙻𝙰𝚉𝙴-𝙾𝙿](t.me/trex_2_0)\n**★ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈:** [𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼](https://docs.pyrogram.org/)\n**★ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴:** [𝙿𝚈𝚃𝙷𝙾𝙽 𝟹](https://www.python.org/)\n**★ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁:** [𝙷𝙴𝚁𝙾𝙺𝚄](https://heroku.com)\n**★ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂:** v2.0 [𝚄𝙿𝙳𝙰𝚃𝙴-𝙻𝙸𝚂𝚃](https://t.me/DEADLY_BOTS)
 """
+HELP_STRINGS = "𝙷𝙴𝚈.\n𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙼𝙴𝙽𝚄 𝙵𝙾𝚁 𝚈𝙾𝚄:"
 
-ACRUISE = """
-💫 𝐏𝐥𝐞𝐚𝐬𝐞 𝐉𝐨𝐢𝐧 @Anime_Cruise !!!
 
-• 𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐀𝐥𝐥 𝐋𝐚𝐭𝐞𝐬𝐭 𝐀𝐧𝐢𝐦𝐞𝐬.
-• 𝐇𝐢𝐠𝐡 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 𝐀𝐧𝐢𝐦𝐞, 𝐋𝐨𝐰 𝐒𝐢𝐳𝐞.
-• 𝐅𝐚𝐬𝐭𝐞𝐬𝐭 𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐎𝐟 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐀𝐧𝐢𝐦𝐞𝐬
-• 24/7 𝐀𝐧𝐢𝐦𝐞 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐬 𝐀𝐜𝐜𝐞𝐩𝐭𝐞𝐝.
 
-✨ 𝐖𝐞 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐘𝐨𝐮𝐫 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 & 𝐘𝐨𝐮 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐀𝐧𝐢𝐦𝐞𝐬.🤍✨
-"""
+TEXXT = "🙋‍♀️ 𝙷𝙴𝚈 ., \n𝙸𝙽𝙽𝙴𝚇𝙸𝙰 𝙷𝙴𝚁𝙴 :) 𝙿𝙼 𝙼𝙴 𝙸𝙵 𝚈𝙾𝚄 𝙷𝙰𝚅𝙴 𝙰𝙽𝚈 𝚀𝚄𝙴𝚂𝚃𝙸𝙾𝙽𝚂 𝙾𝚁 𝙳𝙾𝚄𝙱𝚃𝚂 𝙰𝙱𝙾𝚄𝚃 𝚄𝚂𝙸𝙽𝙶 𝙼𝙴!",
 
-Asuka_IMG = (
-      "https://telegra.ph/file/645e0b5ca6382d6d73ab5.jpg",
-      "https://telegra.ph/file/3c6cb9b50381170c95278.jpg",
-      "https://telegra.ph/file/4e964395ea9138c943dce.jpg",
-      "https://telegra.ph/file/6e6a21dda7dd3525f7f94.jpg",
-      "https://telegra.ph/file/3c6cb9b50381170c95278.jpg",
-)
-
-TEXXT = "Yes B!tch, I Am Alive And Working Fine.\nCheck Out The Buttons Mentioned Below.",
-
-Asuka_N_IMG = (
+PHOTO = (
       "https://telegra.ph/file/0b5e88c90238c357641a7.jpg",
       "https://telegra.ph/file/3c93a66c6751088a00fbd.jpg",
       "https://telegra.ph/file/3b4eed00be4dfaa189fff.jpg",
@@ -161,14 +118,6 @@ Asuka_N_IMG = (
       "https://telegra.ph/file/3c6cb9b50381170c95278.jpg"
 
 )
-
-Asuka_PIC = "https://telegra.ph/file/eedea672a770ec92363bd.jpg"
-
-Asuka_VID = "https://telegra.ph/file/8d49b6f49362e7778785e.jpg"
-
-PM_PHOTO = "https://telegra.ph/file/fefd65c0e2ccb00453407.jpg"
-
-Asuka_DISPACHER_PIC = "https://telegra.ph/file/d03f381c8178a8fd2dc27.jpg"
 
 DONATE_STRING = """ Adding Me To Your Groups Is Donation For Me Though I Would Appreciate If You Join My Creator's Network @TheKaizuryu"""
 
@@ -292,7 +241,7 @@ def start(update: Update, context: CallbackContext):
             id = update.effective_user.id
 
             update.effective_message.reply_photo(
-                photo=(PM_PHOTO),
+                photo=random.choice{PHOTO},
                 caption=PM_START_TEXT.format(
                     escape_markdown(first_name),
                     escape_markdown(uptime),
@@ -303,67 +252,19 @@ def start(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
             )
-            update.effective_message.reply_photo(
-                     photo="https://telegra.ph/file/e29b543a507e0bc79e722.jpg",
-                     caption=ACRUISE,
-                     parse_mode=ParseMode.HTML,
-                     reply_markup=InlineKeyboardMarkup(
-                [
-                  [
-                       InlineKeyboardButton(
-                             text="Join",
-                             url="t.me/Anime_Cruise"),
-                       InlineKeyboardButton(
-                             text="Index",
-                             url="t.me/Cruise_Index/5")
-                     ]
-                ]
-            ),
-        )
-
     else:
         first = update.effective_user.full_name
         chat = update.effective_chat.title
-        update.effective_message.reply_video(
-                video="https://telegra.ph/file/c49829f9f5d65947cbc7e.mp4",
-                caption="Yes B!tch, I Am Alive And Working Fine. \nCheck Out The Buttons Mentioned Below.",
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [
-                       InlineKeyboardButton(
-                             text="Support",
-                             url="t.me/AsukaSupport"),
-                       InlineKeyboardButton(
-                             text="Updates",
-                             url="t.me/AsukaUpdates")
-                     ]
-                ]
-            ),
-        )
-
-# for test purposes
-def error_callback(update: Update, context: CallbackContext):
+        update.effective_message.reply_text(
+            text=TEXXT,
+            parse_mode=ParseMoxt):
     error = context.error
     try:
         raise error
     except Unauthorized:
         print("no nono1")
         print(error)
-        # remove update.message.chat_id from conversation list
-    except BadRequest:
-        print("no nono2")
-        print("BadRequest caught")
-        print(error)
-
-        # handle malformed requests - read more below!
-    except TimedOut:
-        print("no nono3")
-        # handle slow connection problems
-    except NetworkError:
-        print("no nono4")
-        # handle other connection problems
-    except ChatMigrated as err:
+        # remove u   except ChatMigrated as err:
         print("no nono5")
         print(err)
         # the chat_id of a group has changed, use e.new_chat_id instead
@@ -633,10 +534,9 @@ def send_settings(chat_id, user_id, user=False):
     else:
         if CHAT_SETTINGS:
             chat_name = dispatcher.bot.getChat(chat_id).title
-            dispatcher.bot.send_photo(
+            dispatcher.bot.send_message(
                 user_id,
-                photo=random.choice(PM_PHOTO),
-                caption="Which module would you like to check {}'s settings for?"
+                "Which module would you like to check {}'s settings for?"
                 .format(chat_name),
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, CHAT_SETTINGS, "stngs", chat=chat_id)))
